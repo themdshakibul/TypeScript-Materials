@@ -35,3 +35,24 @@ const user = {
 };
 
 //  Contextual Typing
+//  Regular Inference = Right => Left
+//  Contextual Typing = Left => Right
+
+document.addEventListener("click", (event) => {
+  console.log(event.button);
+});
+
+document.addEventListener("scroll", (event) => {
+  console.log(event.target);
+});
+
+const users = ["Alice", "Bob", "Eve"];
+
+//! 'users' is automatically Contextually Typed as a 'string' array
+users.forEach((user) => {
+  console.log(user.toUpperCase()); // Safe and automatically typed!
+});
+
+//  Annotation: Developer => TypeScript
+//  Interface: TypeScript => Developer
+
