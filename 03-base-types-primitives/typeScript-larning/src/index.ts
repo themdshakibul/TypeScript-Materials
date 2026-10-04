@@ -34,4 +34,9 @@ let prie: number = 99.9;
 let tempurature: number = -10;
 let score: number = 95.5;
 
+// boolean
+let isAdmin: boolean = true;
+let isPermission: boolean = false;
 
+// string and String
+let name1: String = new String("Shakibul");
