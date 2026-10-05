@@ -40,3 +40,7 @@ let isPermission: boolean = false;
 
 // string and String
 let name1: String = new String("Shakibul");
+
+// null and undefined
+let result: null = null;
+let user: undefined = undefined;
