@@ -76,3 +76,44 @@ let someValue: any = "Hello World";
 someValue.toUpperCase();
 someValue.notRealMethod();
 someValue.foo.bar.baz;
+
+// unknown
+let dynamicValue: unknown = "Hello World";
+
+if (typeof dynamicValue === "string") {
+  console.log(dynamicValue.toUpperCase());
+}
+
+// void
+
+function logMessage(message: string): void {
+  console.log(message);
+}
+
+// never
+
+function keepAlive(): never {
+  while (true) {
+    console.log("Hertbeat....");
+  }
+}
+
+function throwError(message: string): never {
+  throw new Error(message);
+}
+
+type Shape = "square" | "circle";
+function getArea(shape: Shape) {
+  switch (shape) {
+    case "square":
+      return 100;
+    case "circle":
+      return 314;
+
+    default:
+      // TypeScript know "shape" can only be squre or circle.
+      // Threfore, at this point, "shape" is typed as "never".
+      const _exhaustiveCheck: never = shape;
+      return _exhaustiveCheck;
+  }
+}
