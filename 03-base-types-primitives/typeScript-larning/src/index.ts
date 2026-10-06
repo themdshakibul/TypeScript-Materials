@@ -44,3 +44,35 @@ let name1: String = new String("Shakibul");
 // null and undefined
 let result: null = null;
 let user: undefined = undefined;
+
+let userName: string | null = "Shakibul";
+userName = "The String and Null";
+
+let userNames: string | null = getSavedUser(); // Might return null
+
+if (userNames !== null) {
+  userNames.toUpperCase();
+}
+
+// undefined
+
+const users = ["A", "B"];
+const foundUser: string | undefined = users.find((name) => name === "B");
+
+// bigint
+
+const hugeNumber: bigint = 9999999999995677n;
+
+// symbol
+
+const id1 = Symbol("id");
+const id2 = Symbol("id");
+// console.log(id1 === id2); // false
+
+// The Spacial Types: any, unknown, void, never
+
+// any
+let someValue: any = "Hello World";
+someValue.toUpperCase();
+someValue.notRealMethod();
+someValue.foo.bar.baz;
