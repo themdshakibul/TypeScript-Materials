@@ -23,4 +23,66 @@ function pintNumbers(names: readonly string[]) {
   // names.push("Khalid"); // Error
 }
 
-const mixedArray = ["Shakibul", 10, true, "Rokibul", 20, false];
+const mixedArray: (string | number | boolean)[] = [
+  "Shakibul",
+  10,
+  true,
+  "Rokibul",
+  20,
+  false,
+];
+
+mixedArray.push("Shakibul");
+mixedArray.push(10);
+mixedArray.push(false);
+
+//  Object Types
+const user = {
+  id: 1,
+  name: "Shakibul",
+  active: true,
+};
+
+type User = {
+  id: number;
+  name: string;
+  active: boolean;
+};
+
+const user1: User = {
+  id: 1,
+  name: "Shakibul",
+  active: true,
+};
+
+function printMyUser(user: User) {
+  console.log(user.name);
+}
+
+// Optional Object Properties
+
+type Emp = {
+  id: number;
+  //  readonly id: number;
+  name: string;
+  nickName?: string;
+};
+
+const emp1: Emp = {
+  id: 1,
+  name: "Shakibul",
+};
+
+const emp2: Emp = {
+  id: 1,
+  name: "Shakibul",
+  nickName: "Shakib",
+};
+
+function printNickName(emp: Emp) {
+  if (emp.nickName) {
+    console.log(emp.nickName.toUpperCase());
+  }
+}
+
+
