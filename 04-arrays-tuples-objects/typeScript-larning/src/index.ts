@@ -85,4 +85,88 @@ function printNickName(emp: Emp) {
   }
 }
 
+// Nested Object Types
 
+type Address = {
+  city: string;
+  country: string;
+};
+
+type Artist = {
+  name: string;
+  address: Address;
+};
+
+const address1: Address = {
+  city: "Manikgonj",
+  country: "Bangladesh",
+};
+
+const artist1: Artist = {
+  name: "Shakibul",
+  address: address1,
+};
+
+console.log(address1.city);
+
+//! Array and Object Together
+
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+};
+
+const myProducts: Product[] = [
+  {
+    id: 1,
+    name: "Laptop",
+    price: 1000,
+  },
+  {
+    id: 2,
+    name: "Keybord",
+    price: 2500,
+  },
+];
+
+myProducts.push({
+  id: 3,
+  name: "Mouse",
+  price: 800,
+});
+
+//! Excess Property Check
+
+type Dept = {
+  id: number;
+  name: string;
+};
+
+function saveDept(dept: Dept) {
+  // Save here
+}
+
+saveDept({
+  id: 1,
+  name: "Shakibul",
+});
+
+// Structural Typing
+
+type Point = {
+  x: number;
+  y: number;
+};
+
+const cordinates = {
+  x: 10,
+  y: 20,
+  label: "Origin",
+};
+
+function printPoint(point: Point) {
+  console.log(point.x, point.y);
+}
+
+printPoint({ x: 100, y: 200 });
