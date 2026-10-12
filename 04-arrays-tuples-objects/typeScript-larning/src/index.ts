@@ -170,3 +170,23 @@ function printPoint(point: Point) {
 }
 
 printPoint({ x: 100, y: 200 });
+
+//! Tuples
+
+const address: [string, number] = ["Manikgonj", 1880];
+
+const userEntry: [string, number] = ["Shakibul", 20];
+
+const someName = userEntry[0];
+
+const someAge = userEntry[1];
+
+type Coordinate = [number, number, number?];
+
+const point2D: Coordinate = [10, 20];
+const point3D: Coordinate = [10, 20, 30];
+// const point3D: Coordinate = [10, 20, 30, 40]; // Error
+
+// Rest Example
+
+type Command = [string, number, ...boolean[]];
