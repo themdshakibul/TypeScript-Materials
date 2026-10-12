@@ -190,3 +190,15 @@ const point3D: Coordinate = [10, 20, 30];
 // Rest Example
 
 type Command = [string, number, ...boolean[]];
+
+const command1: Command = ["run", 10, true, false];
+const command2: Command = ["run", 10];
+
+
+
+
+
+
+
+
+
