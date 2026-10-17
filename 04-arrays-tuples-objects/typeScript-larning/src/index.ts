@@ -191,14 +191,23 @@ const point3D: Coordinate = [10, 20, 30];
 
 type Command = [string, number, ...boolean[]];
 
-const command1: Command = ["run", 10, true, false];
-const command2: Command = ["run", 10];
+const command1: Command = ["run", 10];
+const command2: Command = ["run", 10, true];
+const command3: Command = ["run", 10, true, false];
 
+type BOX = readonly [number, number];
+const box: BOX = [10, 20];
+// box[0] = 100; // Error
 
+// Custome hook returning a Tuples: [value, updaterFunction]
 
+function useToggle(initalValue: boolean): [boolean, () => void] {
+  let state = initalValue;
+  const toggle = () => {
+    state = !state;
+  };
+  return [state, toggle];
+}
 
-
-
-
-
-
+// Consuming width destructurng
+const [isModalOpen, toggleModal] = useToggle(false);
